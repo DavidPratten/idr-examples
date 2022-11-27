@@ -172,7 +172,7 @@ When declared, Intensionally Defined Relations may be labelled with a version re
 1. ```standard_birthday_money__v1```, and
 2. ```standard_birthday_money__v2```.
 
-When queried, without a label the most recently declared version is used.  
+When queried without a label the most recently declared version is used.  
 
 If a user specifically wishes to access a specific version, the optional definition identifier may be used in the query.
 ```
