@@ -16,19 +16,18 @@ Initially the policy for birthday money was calculated as $10.00 per year. Here 
 
 ```
 % this is a comment
+
 declare  
     var int: age; % var defines an attribute of the relation (column of the table)
     var currency: birthday_money;
     constraint birthday_money = age*10.00; % constraints express a relationship
-    % constraint birthday_money/10.00 = age; % would have worked just as well.
-giving standard_birthday_money__v1 
-% __ following a double underscore is an optional name of the definition used for 
-%       literate programming.
+giving standard_birthday_money__v1 % __ v1 here is an optional name of the
+                                   % definition used for literate
+                                   % programming below.
 ```
 
-The language used to define IDRs is not so important, the crucial aspect is that the reader and the computing system 
-understands the intension.  The 
-definition above is written in [MiniZinc](https://www.minizinc.org/).  It could equally have been written in another equivalent language.
+The language used to define IDRs is not so important, the crucial aspect is that the reader, and the computing system, understand the intension.  The 
+definition above happens to have been written in [MiniZinc](https://www.minizinc.org/).  
 
 IDRs can be queried as if it were an ordinary database table that contains _all_ the answers. With this table defined, the 
 following 
