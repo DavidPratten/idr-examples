@@ -26,6 +26,12 @@ giving standard_birthday_money__v1
 %       literate programming.
 ```
 
+<p class="callout info"> The language used to define IDRs is not so important, the crucial aspect is that the reader 
+understands the intension.  The 
+definition above is written in [MiniZinc](https://www.minizinc.org/).  It could equally have been 
+written in a 
+form of SQL, or other equivalent, relational query language.</p>
+
 IDRs can be queried as if it were an ordinary database table that contains _all_ the answers. With this table defined, the 
 following 
 query:
