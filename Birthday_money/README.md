@@ -26,7 +26,7 @@ giving standard_birthday_money__v1
 %       literate programming.
 ```
 
-The language used to define IDRs is not so important, the crucial aspect is that the reader 
+The language used to define IDRs is not so important, the crucial aspect is that the reader  
 understands the intension.  The 
 definition above is written in [MiniZinc](https://www.minizinc.org/).  It could equally have been 
 written in a 
