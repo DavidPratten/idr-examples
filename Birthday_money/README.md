@@ -114,7 +114,7 @@ Notice firstly, that the table has the two new columns that we added in v2, and 
 The amount of birthday
 money now depends on
 which year that the birthday occurred in. Therefore, to answer ```Query 1``` as stated above, the list would have to give an 
-answer for every year, ever. Instead of attempting that, the IDR
+answer for every day of every year, ever. Instead of attempting that, the IDR
 returns an empty table as the answer.
 
 If we update the query to indicate that the birthday is in a particular year:
