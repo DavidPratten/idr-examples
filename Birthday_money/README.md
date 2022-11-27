@@ -9,7 +9,7 @@
 | Langauge | OpenFisca                                                                                               |
 | Retrieved          | 2022-Nov-27                                                                                             |
 
-## As an example of Intensionally Defined Relations
+## Initially a flat rate that applies to all children
 
 Initially the policy for birthday money was calculated as $10.00 per year. Here is an intensionally defined relation (IDR) 
 ```standard_birthday_money``` that captures this.
@@ -53,6 +53,8 @@ select * from standard_birthday_money where birthday_money=100;
 | age | birthday_money |
 |-----|----------------|
 | 10  | $100.00        |
+
+## Made conditional on behaviour
 
 From January 1st, 2000, the approach to birthday money was changed. Here is the literate programming code which updates the IDR 
 to a 
@@ -110,12 +112,7 @@ Notice firstly, that the table has the two new columns that we added in v2, and 
 The amount of birthday
 money now depends on
 which year that the birthday occurred in. Therefore, to answer ```Query 1``` as stated above, the list would have to give an 
-answer for every year 
-starting at the big 
-bang 
-and going
-until the 
-heat death of the universe. Instead of attempting that, the IDR
+answer for every year, ever. Instead of attempting that, the IDR
 returns an empty table as the answer.
 
 If we update the query to indicate that the birthday is in a particular year:
