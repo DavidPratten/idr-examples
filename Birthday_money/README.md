@@ -55,7 +55,10 @@ select * from standard_birthday_money where birthday_money=100;
 
 ## Made conditional on behaviour
 
-From January 1st, 2000, the approach to birthday money was changed. Here is the literate programming code which updates the IDR 
+From January 1st, 2000, the the amount of birthday money was made contingent on the child's behaviour. Here is the literate 
+programming code 
+which 
+updates the IDR 
 to a 
 second version. 
 
@@ -96,7 +99,7 @@ giving standard_birthday_money
 
 
 
-If we new repeat ```Query 1``` we get a different output.
+If we now repeat ```Query 1``` we get a different output.
 
 ```
 # Query 1
