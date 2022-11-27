@@ -44,7 +44,7 @@ gives the expected answer:
 |-----|----------------|
 | 10  | $100.00        |
 
-And Query 2 gives the same answer!
+And Query 2 also gives the same answer!
 ```
 # Query 2
 select * from standard_birthday_money where birthday_money=100;

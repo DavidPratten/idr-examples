@@ -1,9 +1,8 @@
 # Examples of Intensionally Defined Relations
 
 ## A table by any other name!
-In the examples found here a relation is "a table of data, with columns and rows". 
-
-The word "relation" signals that what follows has more to do with relational databases than, say, worksheets in Excel.
+In the examples found here a relation is "a table of data, with columns and rows". ( The word "relation" here merely flags 
+that there is a connection to the relational database model.)
 
 ## A table can be defined in two ways
 Every table has an intension, which is its intended meaning and its extension which is its list of rows. But not all tables 
