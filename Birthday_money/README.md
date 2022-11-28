@@ -114,7 +114,7 @@ Notice firstly, that the table has the two new columns that we added in rule2, a
 
 The amount of birthday
 money now depends on
-which year that the birthday occurred in. ```Query 1``` as stated above, does'nt specify a ```this_birthday``` date, and so is 
+which year that the birthday occurred in. ```Query 1``` as stated above, doesn't specify a ```this_birthday``` date, and so is 
 requesting 
 the 
 answer for every day of every year, ever. Instead of attempting that, the IDR
