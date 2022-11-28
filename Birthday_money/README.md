@@ -21,15 +21,13 @@ declare
     var int: age; % var defines an attribute of the relation (column of the table)
     var currency: birthday_money;
     constraint birthday_money = age*10.00; % constraints express a relationship
-giving standard_birthday_money__v1 % __ v1 here is an optional name of the
-                                   % definition used for literate
-                                   % programming below.
+giving standard_birthday_money__rule1 
 ```
 
 The language used to define IDRs is not so important, the crucial aspect is that the reader, and the computing system, understand the intension.  The 
 definition above happens to have been written in [MiniZinc](https://www.minizinc.org/).  
 
-IDRs can be queried as if it were an ordinary database table that contains _all_ the answers. With this table defined, the 
+IDRs can be queried as if they are an ordinary database table that contains _all_ the answers. With this table defined, the 
 following 
 query:
 
@@ -53,6 +51,8 @@ select * from standard_birthday_money where birthday_money=100;
 |-----|----------------|
 | 10  | $100.00        |
 
+Notice that the relationship can be queried from multiple directions.
+
 ## Made conditional on behaviour
 
 From January 1st, 2000, the the amount of birthday money was made contingent on the child's behaviour. Here is the literate 
@@ -60,23 +60,24 @@ programming code
 which 
 updates the IDR 
 to a 
-second version. 
+second version. Notice that the ```__``` at the end of the IDR shows a unique identifier for that definition.  Earlier 
+definitions can be modified with the ```with``` construct.
 
 ```
-with standard_birthday_money__v1
+with standard_birthday_money__rule1
 declare
     var bool: good_behaviour;
     var date: this_birthday;
-    par date: v2_start = "2000-01-01" % "par" or "parameter" defines a fixed value
+    par date: rule2_start = "2000-01-01" % defines a fixed value
 retract
     constraint birthday_money = age*10;
 declare
-    constraint birthday_money = if this_birthday>= v2_start then 
+    constraint birthday_money = if this_birthday>= rule2_start then 
             if good_behaviour then age*20.00 else 0.00 endif
         else
             age*10.00
-        endif
-giving standard_birthday_money__v2
+        endif;
+giving standard_birthday_money__rule2
 ```
 
 Following the literate programming update, ```standard_birthday_money``` now has the following definition:
@@ -87,12 +88,12 @@ declare
     var currency: birthday_money;
     var bool: good_behaviour;
     var date: this_birthday;
-    par date: v2_start = "2000-01-01"
-    constraint birthday_money = if this_birthday>= v2_start then 
+    par date: rule2_start = "2000-01-01"
+    constraint birthday_money = if this_birthday>= rule2_start then 
             if good_behaviour then age*20.00 else 0.00 endif
         else
             age*10.00
-        endif
+        endif;
 giving standard_birthday_money
 ```
 
@@ -109,11 +110,13 @@ select * from standard_birthday_money where age = 10;
 | age | birthday_money | good_behaviour | this_birthday |
 |-----|----------------|---|---|
 
-Notice firstly, that the table has the two new columns that we added in v2, and secondly that we have had no result returned. 
+Notice firstly, that the table has the two new columns that we added in rule2, and secondly that we have had no result returned. 
 
 The amount of birthday
 money now depends on
-which year that the birthday occurred in. Therefore, to answer ```Query 1``` as stated above, the list would have to give an 
+which year that the birthday occurred in. ```Query 1``` as stated above, does'nt specify a ```this_birthday``` date, and so is 
+requesting 
+the 
 answer for every day of every year, ever. Instead of attempting that, the IDR
 returns an empty table as the answer.
 
@@ -122,7 +125,8 @@ If we update the query to indicate that the birthday is in a particular year:
 ```
 # Query 3
 select * from standard_birthday_money 
-    where age = 10 and this_birthday = '2000-11-27';
+    where age = 10 
+        and this_birthday = '2000-11-27';
 ```
 
 we get two results which expresses what we know to be true.
@@ -138,7 +142,10 @@ As soon as we know the behaviour of the person, we can find the actual birthday 
 
 ```
 # Query 4
-select * from standard_birthday_money where age = 10 and this_birthday = '2022-11-27' and good_behaviour = true;
+select * from standard_birthday_money 
+    where age = 10 
+        and this_birthday = '2022-11-27' 
+        and good_behaviour = true;
 ```
 
 it turns out this person had 'good_behaviour', (however that was defined) and will therefore be given $200.00 for their birthday.
@@ -146,6 +153,21 @@ it turns out this person had 'good_behaviour', (however that was defined) and wi
 | age | birthday_money | good_behaviour | this_birthday |
 |-----|----------------|---|---------------|
 |10 | 200.00         | true | 2000-11-27    |
+
+And again to show that the direction of querying is flexible
+```
+# Query 5
+select good_behaviour from standard_birthday_money 
+    where age = 10 
+        and this_birthday = '2022-11-27' 
+        and birthday_money = 200;
+```
+
+will yield:
+
+| good_behaviour |
+|----------------|
+| true           |
 
 # Test Data
 To test an IDR the test data are prepared as a table which captures a portion of the values that are intended to be part of it.
@@ -169,15 +191,15 @@ The correctness of this IDR can be tested simply by comparing, row by row, what 
 ## Versions of Intensionally Defined Relations
 When declared, Intensionally Defined Relations may be labelled with a version reference. Above we have two versions of 
 ```standard_birthday_money```:
-1. ```standard_birthday_money__v1```, and
-2. ```standard_birthday_money__v2```.
+1. ```standard_birthday_money__rule1```, and
+2. ```standard_birthday_money__rule2```.
 
 When queried without a label the most recently declared version is used.  
 
 If a user specifically wishes to access a specific version, the optional definition identifier may be used in the query.
 ```
-# Query 5
-select * from standard_birthday_money__v1 where age = 10;
+# Query 6
+select * from standard_birthday_money__rule1 where age = 10;
 ```
 
 | age | birthday_money |
