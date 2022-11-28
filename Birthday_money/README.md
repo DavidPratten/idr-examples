@@ -2,12 +2,12 @@
 
 ## Source
 
-| Key                | Value                                                                                                   |
-|--------------------|---------------------------------------------------------------------------------------------------------|
-| Author             | Ram Parameswaran                                                                                        |
-| Link               | [![Birthday Monday](https://img.youtube.com/vi/qnn8p8xaP1U/0.jpg)](https://youtu.be/qnn8p8xaP1U?t=3999) | 
-| Langauge | OpenFisca                                                                                               |
-| Retrieved          | 2022-Nov-27                                                                                             |
+| Key       | Value                                                                                                   |
+|-----------|---------------------------------------------------------------------------------------------------------|
+| Author    | Ram Parameswaran                                                                                        |
+| Link      | [![Birthday Monday](https://img.youtube.com/vi/qnn8p8xaP1U/0.jpg)](https://youtu.be/qnn8p8xaP1U?t=3999) | 
+| Language  | OpenFisca                                                                                               |
+| Retrieved | 2022-Nov-27                                                                                             |
 
 ## Initially a flat rate that applies to all children
 
