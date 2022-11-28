@@ -95,6 +95,6 @@ gives a relation which finds the FromStart and Nth values which belong to sequen
 | FromStart | ToStop | N | nth | nthValue |
 |-----------|--------|---|-----|----------|
 | 15.0      | 20.0   | 5 | 0   | 15.0     |
-| 12.5      | 20.0   | 5 | 1   | 12.0     |
+| 12.5      | 20.0   | 5 | 1   | 15.0     |
 | 10.0      | 20.0   | 5 | 2   | 15.0     |
 | 0.0       | 20.0   | 5 | 3   | 15.0     |
