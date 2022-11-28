@@ -20,10 +20,13 @@ Our databases and CRMs are full of extensionally defined tables, here are a few:
 | Our Customers                | 1 row in a table for each customer |
 | Our Orders                   | 1 row in a table for each order    |
 
-## Why Intensionally Defined Relations (IDR)
+## Why Intensionally Defined Relations (IDRs)?
+The value of IDRs as a construct is an open question. Examples in this repository are designed to illustrate advantages and 
+drawbacks of IDRs and are mainly drawn 
+from 
+the Rules As Code domain.
 
-
-## Examples of Intensionally Defined Relations (IDR)
+## Examples of Intensionally Defined Relations (IDRs)
 This repository contains a set of worked examples of IDRs.
 
 - [Birthday Money](https://github.com/DavidPratten/idr-examples/tree/main/Birthday_money)
