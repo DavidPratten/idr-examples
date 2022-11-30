@@ -76,19 +76,6 @@ shows the comparative conveyancing duty across the three pricing regimes.
 |true| false | 1,200,000 | 49,750 |
 | false | false| 1,200,000 | 0|
  
-### How much duty for is chargeable for a property valued at $1.2M?
-```
-select * from ACT_Conveyance_Duty where price = 1200000;
-
-```
-shows the comparative conveyancing duty across the three pricing regimes.
-
-| non_commercial | eligible_owner_occupier | price     | duty    |
-|----------------|-------------------------|-----------|---------|
-| true| true| 1,200,000 |  47,590 |
-|true| false | 1,200,000 | 49,750 |
-| false | false| 1,200,000 | 0|
-
 ### How much duty for is chargeable for a property valued at $2M?
 ```
 select * from ACT_Conveyance_Duty where price = 1200000;
