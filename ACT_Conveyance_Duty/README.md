@@ -78,7 +78,7 @@ shows the comparative conveyancing duty across the three pricing regimes.
  
 ### How much duty for is chargeable for a property valued at $2M?
 ```
-select * from ACT_Conveyance_Duty where price = 1200000;
+select * from ACT_Conveyance_Duty where price = 2000000;
 
 ```
 shows the convergence of the owner occupied and non-occupied regimes at higher prices.
