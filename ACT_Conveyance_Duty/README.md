@@ -1,7 +1,6 @@
 # ACT Conveyance Duty
 The following is an intensionally defined relation (IDR) that captures
-the relationship between price and [conveyance duty in the ACT from 1 July 2022](https://www.revenue.act.gov.
-au/duties/conveyance-duty). The duty payable depends firstly on whether the purchase is non-commercial or commercial and 
+the relationship between price and [conveyance duty in the ACT from 1 July 2022](https://www.revenue.act.gov.au/duties/conveyance-duty). The duty payable depends firstly on whether the purchase is non-commercial or commercial and 
 secondly, if non-commercial, whether the purchase is by an owner occupier. The definition is
 written MiniZinc.
 
