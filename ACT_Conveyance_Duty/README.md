@@ -2,19 +2,23 @@
 The following is an intensionally defined relation (IDR) that captures
 the relationship between price and [conveyance duty in the ACT from 1 July 2022](https://www.revenue.act.gov.au/duties/conveyance-duty). The duty payable depends firstly on whether the purchase is non-commercial or commercial and 
 secondly, if non-commercial, whether the purchase is by an owner occupier. The definition is
-written MiniZinc.
+written in [MiniZinc](https://www.minizinc.org/).
 
 Callouts from this example include:
 
 - the usage of a library IDR `units` to capture the idea of applying the duty to units of hundred dollars rounding up. 
 - the IDR captures the rule once and is queryable in any direction, just like an ordinary database table
 
-
 ```
+%
 % units IDR calculates the number of units of "unit_size" with optional "round_up"
+%
 predicate units(var int:amount, var int:unit_size, var bool: round_up, var int:units ) = 
   units == amount div unit_size + if round_up then amount mod unit_size > 0 else 0 endif;
 
+%
+% ACT Conveyance Duty IDR
+%
 predicate ACT_Conveyance_Duty(var bool: non_commercial, var bool: eligible_owner_occupier, var int:price, var float:duty) = 
 let {
   constraint eligible_owner_occupier -> non_commercial,
