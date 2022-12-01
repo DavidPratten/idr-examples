@@ -63,7 +63,18 @@ gives
 | duty   |
 |--------|
 | 47,590 |
+### How much duty for a non_commercial property valued at of $1.2M?
+```
+-- Example 1a
+select eligible_owner_occupier, duty from ACT_Conveyance_Duty where price = 1200000 and non_commercial;
 
+```
+gives
+
+| eligible_owner_occupier | duty |
+|-------------------------|------------------------------|
+| true                    | 47,590                       |
+| false                   | 49,750                       |
 ### How much duty for is chargeable for a property valued at $1.2M?
 ```
 -- Example 2
