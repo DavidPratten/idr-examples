@@ -54,6 +54,7 @@ Here is a selection of queries that demonstrate the number of different insights
 
 ### How much duty for a home occupier on a house of $1.2M?
 ```
+-- Example 1
 select duty from ACT_Conveyance_Duty where price = 1200000 and eligible_owner_occupier;
 
 ```
@@ -65,10 +66,13 @@ gives
 
 ### How much duty for is chargeable for a property valued at $1.2M?
 ```
+-- Example 2
 select * from ACT_Conveyance_Duty where price = 1200000;
 
 ```
-shows the comparative conveyancing duty across the three pricing regimes.
+shows the comparative conveyancing duty across the various pricing regimes. Notice that the IDR has deduced and is reporting that 
+there are 
+_three_ categories of payers.
 
 | non_commercial | eligible_owner_occupier | price     | duty    |
 |----------------|-------------------------|-----------|---------|
@@ -78,6 +82,7 @@ shows the comparative conveyancing duty across the three pricing regimes.
  
 ### How much duty for is chargeable for a property valued at $2M?
 ```
+-- Example 3
 select * from ACT_Conveyance_Duty where price = 2000000;
 
 ```
@@ -90,10 +95,13 @@ shows the convergence of the owner occupied and non-occupied regimes at higher p
 | false | false| 2,000,000 | 155,000 |
 
 ### An owner occupier pays $50,150 in conveyancing duty.  What is the corresponding house price?
+This query
 ```
+-- Example 4
 select price from ACT_Conveyance_Duty where duty = 50150 and eligible_owner_occupier;
 ```
-shows that there are 100 possible prices that give a duty value of $50,150
+shows that there is more than one possible price that gives a duty value of $50,150. The IDR has deduced that there are 100 
+such values and reports them.
 
 | price     |
 |-----------|
@@ -107,6 +115,7 @@ shows that there are 100 possible prices that give a duty value of $50,150
 
 ### A property owner pays 140,740 in conveyancing duty. What are the corresponding property prices?
 ```
+-- Example 5
 select non_commercial, 
     eligible_owner_occupier, 
     min(price) min_price, 
