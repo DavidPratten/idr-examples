@@ -35,7 +35,7 @@ following
 query:
 
 ```
-# Query 1
+-- Query 1
 select * from standard_birthday_money where age = 10;
 ```
 gives the expected answer:
@@ -46,7 +46,7 @@ gives the expected answer:
 
 And Query 2 also gives the same answer!
 ```
-# Query 2
+-- Query 2
 select * from standard_birthday_money where birthday_money=100;
 ```
 
@@ -58,7 +58,7 @@ Notice that the relationship can be queried from multiple directions.
 
 ## Made conditional on behaviour
 
-At some point of time, the the amount of birthday money was made contingent on the child's behaviour. Here is the second version. 
+At some point of time, the amount of birthday money was made contingent on the child's behaviour. Here is the second version. 
 
 ```
 predicate standard_birthday_money(
@@ -73,7 +73,7 @@ let {
 If we now repeat ```Query 1``` we get a different output.
 
 ```
-# Query 1
+-- Query 1
 select * from standard_birthday_money where age = 10;
 ```
 
@@ -89,7 +89,7 @@ This may be read as "a child turning ten will receive either nothing, or two hun
 As soon as we know the behaviour of the person, we can find the actual birthday money with the following query:
 
 ```
-# Query 4
+-- Query 4
 select * from standard_birthday_money 
     where age = 10 
         and good_behaviour = true;
@@ -103,7 +103,7 @@ it turns out this person had 'good_behaviour', (however that was defined) and wi
 
 And again to show that the direction of querying is flexible
 ```
-# Query 5
+-- Query 5
 select good_behaviour from standard_birthday_money 
     where age = 10 
         and birthday_money = 200;
