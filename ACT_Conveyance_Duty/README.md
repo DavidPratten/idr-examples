@@ -81,7 +81,7 @@ transactions, and the duty payable for each case
 
 <div id="how-much-duty-for-is-chargeable-for-a-property-valued-at-1.2m">
 
-### How much duty for is chargeable for a property valued at $1.2M?
+### How much duty is chargeable for a property valued at $1.2M?
 
 </div>
 
@@ -104,7 +104,7 @@ regimes. Notice that the IDR has deduced and is reporting that there are
 
 <div id="how-much-duty-for-is-chargeable-for-a-property-valued-at-2m">
 
-### How much duty for is chargeable for a property valued at $2M?
+### How much duty is chargeable for a property valued at $2M?
 
 </div>
 
