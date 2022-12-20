@@ -120,9 +120,9 @@ higher prices.
 
 | non\_commercial | eligible\_owner\_occupier | price     | duty    |
 | :-------------- | :------------------------ | :-------- | :------ |
-| true            | true                      | 2,000,000 | 140,740 |
-| true            | false                     | 2,000,000 | 140,740 |
-| false           | false                     | 2,000,000 | 155,000 |
+| true            | true                      | 2,000,000 | 90,800 |
+| true            | false                     | 2,000,000 | 90,800 |
+| false           | false                     | 2,000,000 | 100,000 |
 
 <div id="an-owner-occupier-pays-50150-in-conveyancing-duty.-what-is-the-corresponding-house-price">
 
